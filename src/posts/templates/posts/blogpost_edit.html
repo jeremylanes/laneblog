@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    <title>Eiter un artile </title>
+{% endblock title %}
+
+
+{% block content %}
+
+<h1>Editer l'article</h1>
+
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label for="title">Titre</label>
+    <input type="text" name="title" id="" value="{{ post.title }}" >
+
+    <label for="content">Contenu</label>
+    <textarea name="content" id="" cols="30" rows="10"> {{ post.content }} </textarea>
+
+    <label for="published">Publiée</label>
+    <input type="checkbox" name="published" id="" >
+
+    <input type="submit" value="Editer" class="btn btn-submit">
+    
+</form>
+
+{% endblock content %}
